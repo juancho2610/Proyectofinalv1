@@ -1,5 +1,7 @@
 package co.unipiloto.proyect;
 
+import static androidx.constraintlayout.motion.widget.Debug.getLocation;
+
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.ComponentName;
@@ -8,6 +10,7 @@ import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -26,19 +29,25 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText editTextUsername, editTextPassword;
-    private Button buttonLogin, buttonCreateAccount,buttonServicio;
+    private Button buttonLogin, buttonCreateAccount, buttonServicio;
     private DatabaseHelper dbHelper;
     private Toolbar toolbar;
 
     private OdometerService odometerService;
-    private  boolean bound = false;
+    private boolean bound = false;
     private TextView distanceView;
     private final Handler handler = new Handler();
     private static final int REQUEST_LOCATION_PERMISSION = 1;
 
+
+    private FusedLocationProviderClient fusedLocationClient;
 
     // ServiceConnection para conectar el servicio
     private final ServiceConnection connection = new ServiceConnection() {
@@ -69,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         buttonCreateAccount = findViewById(R.id.buttonCreateAccount);
         buttonServicio = findViewById(R.id.buttonService);
 
-        toolbar=findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         dbHelper = new DatabaseHelper(this);
@@ -83,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
                 // Verificar las credenciales
                 loginUser(username, password);
             }
-
 
 
         });
@@ -105,6 +113,15 @@ public class MainActivity extends AppCompatActivity {
                 startService(intent);
             }
         });
+
+
+        // Inicializar FusedLocationProviderClient
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+
+        // Verificar permisos y obtener ubicación
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            getLocation();
+        }
 
 
     }
@@ -167,11 +184,11 @@ public class MainActivity extends AppCompatActivity {
         } else if (id == R.id.menu_volver) {
             onBackPressed();
             return true;
-        } else if (id == R.id.menu_horario){
+        } else if (id == R.id.menu_horario) {
             Intent intent = new Intent(MainActivity.this, VerHorarioActivity.class);
             startActivity(intent);
             return true;
-        }else if (id == R.id.menu_ver_actividades_votos){
+        } else if (id == R.id.menu_ver_actividades_votos) {
             Intent intent = new Intent(MainActivity.this, VerActividadesconvotosActivity.class);
             startActivity(intent);
             return true;
@@ -272,6 +289,34 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    // Método para obtener la ubicación actual
+    private void getLocation() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        fusedLocationClient.getLastLocation()
+                .addOnSuccessListener(this, new OnSuccessListener<Location>() {
+                    @Override
+                    public void onSuccess(Location location) {
+                        if (location != null) {
+                            double latitude = location.getLatitude();
+                            double longitude = location.getLongitude();
+                            Toast.makeText(MainActivity.this, "Lat: " + latitude + ", Lon: " + longitude, Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(MainActivity.this, "No se pudo obtener la ubicación.", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
+
 
 
 }
