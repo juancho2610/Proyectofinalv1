@@ -22,6 +22,11 @@
             android:name=".NotificationService"
             android:exported="false"/>
 
+        <service
+            android:name=".OdometerService"
+            android:enabled="true"
+            android:exported="false" />
+
         <activity
             android:name=".CrearActividadActivity"
             android:exported="false" />

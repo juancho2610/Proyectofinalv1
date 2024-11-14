@@ -1,20 +1,30 @@
 package co.unipiloto.proyect;
 
+import android.Manifest;
 import android.app.AlertDialog;
+import android.content.ComponentName;
 import android.content.Intent;
+import android.content.ServiceConnection;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.IBinder;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,10 +33,35 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseHelper dbHelper;
     private Toolbar toolbar;
 
+    private OdometerService odometerService;
+    private  boolean bound = false;
+    private TextView distanceView;
+    private final Handler handler = new Handler();
+    private static final int REQUEST_LOCATION_PERMISSION = 1;
+
+
+    // ServiceConnection para conectar el servicio
+    private final ServiceConnection connection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            OdometerService.OdometerBinder binder = (OdometerService.OdometerBinder) service;
+            odometerService = binder.getService();
+            bound = true;
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            bound = false;
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
+        distanceView = findViewById(R.id.distanceView);
+        displayDistance();
 
         editTextUsername = findViewById(R.id.editTextUsername);
         editTextPassword = findViewById(R.id.editTextPassword);
@@ -188,4 +223,55 @@ public class MainActivity extends AppCompatActivity {
                 .setPositiveButton("OK", null)
                 .show();
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION_PERMISSION);
+            } else {
+                bindService(new Intent(this, OdometerService.class), connection, BIND_AUTO_CREATE);
+            }
+        } else {
+            bindService(new Intent(this, OdometerService.class), connection, BIND_AUTO_CREATE);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == REQUEST_LOCATION_PERMISSION) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                bindService(new Intent(this, OdometerService.class), connection, BIND_AUTO_CREATE);
+            } else {
+                Toast.makeText(this, "Location permission required for distance calculation.", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (bound) {
+            unbindService(connection);
+            bound = false;
+        }
+    }
+
+    // Método para mostrar la distancia en el TextView
+    private void displayDistance() {
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                if (bound && odometerService != null) {
+                    double distance = odometerService.getDistance();
+                    distanceView.setText(String.format("Distance: %.2f km", distance));
+                }
+                handler.postDelayed(this, 1000);
+            }
+        });
+    }
+
+
 }

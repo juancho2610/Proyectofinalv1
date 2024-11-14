@@ -69,6 +69,16 @@
             android:text="Servicio Activo" />
 
 
+        <TextView
+            android:id="@+id/distanceView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonCreateAccount"
+            android:layout_margin="90dp"
+            android:text="Distance"
+            android:textSize="24sp" />
+
+
 
 
     </RelativeLayout>
