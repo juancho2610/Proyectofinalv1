@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/textViewFecha_item_horario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha: "/>
+
+    <TextView
+        android:id="@+id/textViewHora_item_horario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hora: "/>
+
+    <TextView
+        android:id="@+id/textViewLocalidad_item_horario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Localidad: "/>
+
+
+    <!-- Botón para eliminar el horario -->
+    <Button
+        android:id="@+id/btnEliminar_item_horario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancelar"
+        android:layout_gravity="end"
+        android:textColor="#FF0000" />
+
+</LinearLayout>

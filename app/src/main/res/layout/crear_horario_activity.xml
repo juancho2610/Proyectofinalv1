@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:content=".CrearHorarioActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarCrearActividades_Horario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            android:elevation="4dp"/>
+
+        <!-- Título de la pantalla -->
+        <TextView
+            android:id="@+id/textViewTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Crear Horario"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Botón para seleccionar la fecha -->
+        <Button
+            android:id="@+id/btnSeleccionarFecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Seleccionar Fecha"
+            android:layout_marginBottom="10dp" />
+
+        <!-- TextView para mostrar la fecha seleccionada -->
+        <TextView
+            android:id="@+id/textViewFecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha seleccionada: "
+            android:layout_marginBottom="20dp" />
+
+        <!-- Botón para seleccionar la hora -->
+        <Button
+            android:id="@+id/btnSeleccionarHora"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Seleccionar Hora"
+            android:layout_marginBottom="10dp" />
+
+        <!-- TextView para mostrar la hora seleccionada -->
+        <TextView
+            android:id="@+id/textViewHora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hora seleccionada: "
+            android:layout_marginBottom="20dp" />
+
+        <!-- Spinner para seleccionar la localidad -->
+        <Spinner
+            android:id="@+id/spinnerLocalidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Botón para crear el horario -->
+        <Button
+            android:id="@+id/btnCrearHorario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Crear Horario"
+            android:layout_marginTop="30dp"
+            android:textStyle="bold"
+            android:background="?attr/colorPrimary"
+            android:textColor="#FFFFFF" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

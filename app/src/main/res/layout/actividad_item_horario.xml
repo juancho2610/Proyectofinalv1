@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="?attr/selectableItemBackground">
+
+    <!-- Fecha del horario -->
+
+    <TextView
+        android:id="@+id/textViewFecha_ac_item_horario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <!-- Hora del horario -->
+    <TextView
+        android:id="@+id/textViewHora_ac_item_horario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hora" />
+
+    <TextView
+        android:id="@+id/textViewDeporte_ac_item_horario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deporte"
+        android:layout_marginTop="4dp" />
+
+    <!-- Estado del horario (Disponible o Reservado) -->
+    <TextView
+        android:id="@+id/textViewEstado_ac_item_horario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estado"
+        android:textColor="@android:color/holo_green_dark"
+        android:layout_marginTop="4dp" />
+
+
+    <!-- Botón para registrar el horario -->
+    <Button
+        android:id="@+id/btnReservar_ac_item_horario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reservar"
+        android:backgroundTint="@color/material_dynamic_primary0"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="8dp" />
+
+    <!-- Botón para cancelar la reserva del horario -->
+    <Button
+        android:id="@+id/btnCancelar_ac_item_horario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancelar Reserva"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="4dp"
+        android:visibility="visible" /> <!-- Este botón estará visible solo si el horario está reservado -->
+
+
+</LinearLayout>

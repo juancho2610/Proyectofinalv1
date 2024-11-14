@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_CHAPINERO"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/azulneon"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:elevation="4dp"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btn_show_marker_chapinero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/azulneon"
+        android:text="Marcador de Ruta 1"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btn_show_marker_chapinero_v1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/azulneon"
+        android:text="Marcador de Ruta 2"
+        android:layout_marginBottom="16dp"/>
+
+
+    <Button
+        android:id="@+id/btn_show_route_chapinero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/azulneon"
+        android:text="Ruta de Actividad 1"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btn_show_route_chapinero_v1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/azulneon"
+        android:text="Ruta de Actividad 2"
+        android:layout_marginBottom="16dp"/>
+
+
+    <Button
+        android:id="@+id/btn_show_current_location_chapinero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/azulneon"
+        android:text="Ubicación Actual 1"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btn_show_current_location_chapinero_v1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/azulneon"
+        android:text="Ubicación Actual 2"
+        android:layout_marginBottom="16dp"/>
+
+</LinearLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".RolDecisor" >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarCrearActividades_CA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:elevation="4dp"/>
+
+    <Button
+        android:id="@+id/buttonVerActividades_decisor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Actividades Recientes"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/buttonModificarActividad_decisor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Modificar Actividad"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/buttonEliminarActividad_decisor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eliminar Actividad"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/buttonAceptarActividad_decisor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aceptar Actividad"
+        android:layout_marginBottom="16dp"/>
+
+</LinearLayout>

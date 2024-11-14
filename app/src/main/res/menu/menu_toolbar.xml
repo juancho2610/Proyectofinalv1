@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_consultar_votos"
+        android:title="Consultar Votos"
+        android:icon="@drawable/ic_votos"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_consultar_usuarios"
+        android:title="Consultar Usuarios"
+        android:icon="@drawable/ic_usuarios"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_volver"
+        android:title="Volver"
+        android:icon="@drawable/ic_volver"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_horario"
+        android:title="Consultar Horarios"
+        android:icon="@drawable/ic_horarios"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_ver_actividades_votos"
+        android:title="Ver Actividades con Votos"
+        android:icon="@drawable/ic_votar"
+        app:showAsAction="always" />
+
+
+</menu>

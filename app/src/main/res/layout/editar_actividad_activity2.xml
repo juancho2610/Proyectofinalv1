@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textViewEditarN_ed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Editar Nombre" />
+
+    <EditText
+        android:id="@+id/editTextN_ed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre de la actividad" />
+
+    <TextView
+        android:id="@+id/textViewEditarDes_ed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Editar Descripción" />
+
+    <EditText
+        android:id="@+id/editTextDes_ed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Descripción de la actividad" />
+
+    <TextView
+        android:id="@+id/textViewEditarUbi_ed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Editar Ubicación" />
+
+    <EditText
+        android:id="@+id/editTextUbi_ed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ubicación de la actividad" />
+
+    <TextView
+        android:id="@+id/textViewEditarEst_ed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Editar Estado" />
+
+    <EditText
+        android:id="@+id/editTextEst_ed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Estado de la actividad" />
+
+    <Button
+        android:id="@+id/buttonGuardar_ed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar Cambios" />
+
+</LinearLayout>

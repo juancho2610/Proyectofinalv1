@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarCrearActividades_CA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:elevation="4dp"/>
+
+    <Button
+        android:id="@+id/buttonCrearFutbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Futbol"
+        android:layout_marginBottom="16dp"/>
+
+
+    <Button
+        android:id="@+id/buttonCrearVoleibol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Voleibol"
+        android:layout_marginBottom="16dp"/>
+
+
+    <Button
+        android:id="@+id/buttonCrearNatacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Natacion"
+        android:layout_marginBottom="16dp"/>
+
+
+    <Button
+        android:id="@+id/buttonCrearBaloncesto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Baloncesto"
+        android:layout_marginBottom="16dp"/>
+
+</LinearLayout>

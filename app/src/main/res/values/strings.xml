@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Proyect</string>
+    <string name="welcome_message">!Bienvenido a Seleccionar Proyecto!</string>
+    <string name="start_button_text">Comenzar</string>
+    <string name="star_button_text">rolplaneador</string>
+    <string-array name="localidades_array">
+        <item>Chapinero</item>
+        <item>Kennedy</item>
+        <item>Ciudad Bolivar</item>
+        <item>Suba</item>
+    </string-array>
+</resources>
