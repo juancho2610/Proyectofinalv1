@@ -9,7 +9,7 @@
         android:id="@+id/toolbar_rol"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:background="@color/azulneon"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         android:elevation="4dp"/>
 
@@ -17,6 +17,8 @@
         android:id="@+id/buttonCiudadano"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/coral"
+        android:textColor="@color/black"
         android:text="Rol Ciudadano"
         android:layout_marginBottom="16dp"/>
 
@@ -24,6 +26,8 @@
         android:id="@+id/buttonPlaneador"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/verdeclaro"
+        android:textColor="@color/black"
         android:text="Rol Planeador"
         android:layout_marginBottom="16dp"/>
 
@@ -31,6 +35,8 @@
         android:id="@+id/buttonDecisor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/dorado"
+        android:textColor="@color/black"
         android:text="Rol Decisor"/>
 
 

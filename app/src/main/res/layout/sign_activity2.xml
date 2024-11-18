@@ -87,6 +87,8 @@
             android:id="@+id/buttonSelectFechaNacimiento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/azure"
+            android:textColor="@color/black"
             android:text="Seleccionar Fecha" />
 
         <!-- Contraseña -->
@@ -153,6 +155,8 @@
             android:id="@+id/buttonCreateAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/azure"
+            android:textColor="@color/black"
             android:layout_marginTop="16dp"
             android:text="Crear Cuenta" />
 

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/beige"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".RolCuidadano">
@@ -12,7 +13,7 @@
         android:id="@+id/toolbarCrearActividades_CA"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:background="@color/coral"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         android:elevation="4dp"/>
 
@@ -21,6 +22,8 @@
         android:id="@+id/buttonCrearActividad_cuidadano"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/coral"
+        android:textColor="@color/black"
         android:text="Crear Actividad"
         android:layout_marginBottom="16dp"/>
 
@@ -28,6 +31,8 @@
         android:id="@+id/buttonVerActividades_cuidadano"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/coral"
+        android:textColor="@color/black"
         android:text="Actividades Recientes"
         android:layout_marginBottom="16dp"/>
 
@@ -35,6 +40,8 @@
         android:id="@+id/buttonModificarActividad_cuidadano"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/coral"
+        android:textColor="@color/black"
         android:text="Modificar Actividad"
         android:layout_marginBottom="16dp"/>
 
@@ -42,6 +49,8 @@
         android:id="@+id/buttonEliminarActividad_cuidadano"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/coral"
+        android:textColor="@color/black"
         android:text="Eliminar Actividad"
         android:layout_marginBottom="16dp"/>
 
@@ -49,6 +58,8 @@
         android:id="@+id/buttonVotarActividad_cuidadano"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/coral"
+        android:textColor="@color/black"
         android:text="Votar Actividad"
         android:layout_marginBottom="16dp"/>
 
@@ -56,6 +67,8 @@
         android:id="@+id/buttonVotarActividadEliminar_cuidadano"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/coral"
+        android:textColor="@color/black"
         android:text="Eliminar Voto"
         android:layout_marginBottom="16dp"/>
 

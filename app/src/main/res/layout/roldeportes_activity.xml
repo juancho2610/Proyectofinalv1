@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -9,7 +10,7 @@
         android:id="@+id/toolbarCrearActividades_Deportes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:background="@color/azulneon"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         android:elevation="4dp"/>
 
@@ -18,6 +19,8 @@
         android:id="@+id/buttonCrear_Deportes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/beige"
+        android:textColor="@color/black"
         android:text="Crear Horario"
         android:layout_marginBottom="16dp"/>
 
@@ -25,6 +28,8 @@
         android:id="@+id/buttonVerHorarios_Deportes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/beige"
+        android:textColor="@color/black"
         android:text="Horarios Recientes"
         android:layout_marginBottom="16dp"/>
 
@@ -32,6 +37,8 @@
         android:id="@+id/buttonVerHorarios_Generados"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/beige"
+        android:textColor="@color/black"
         android:text="Horarios Generados"
         android:layout_marginBottom="16dp"/>
 
