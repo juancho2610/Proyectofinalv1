@@ -313,8 +313,8 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(Location location) {
                         if (location != null) {
-                            double latitude = location.getLatitude();
-                            double longitude = location.getLongitude();
+                            double latitude = 4.6482976;
+                            double longitude = -74.107807;
                             Geocoder geocoder = new Geocoder(MainActivity.this, Locale.getDefault());
                             try {
                                 List<Address> address = geocoder.getFromLocation(latitude, longitude, 1);
