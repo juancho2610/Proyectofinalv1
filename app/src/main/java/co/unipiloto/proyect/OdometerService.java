@@ -25,8 +25,8 @@ public class OdometerService extends Service {
     private static double distanceInMeters;
     private Location lastLocation;
     private Location targetLocation;
-    private static final double TARGET_LATITUDE = 40.748817;
-    private static final double TARGET_LONGITUDE = -73.985428;
+    private static final double TARGET_LATITUDE = 4.6326698;
+    private static final double TARGET_LONGITUDE = -74.0655505;
 
     public class OdometerBinder extends Binder {
         public OdometerService getService() {
