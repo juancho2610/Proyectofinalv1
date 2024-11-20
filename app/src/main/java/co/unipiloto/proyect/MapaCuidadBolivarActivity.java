@@ -28,8 +28,8 @@ public class MapaCuidadBolivarActivity extends AppCompatActivity {
         // Ejemplo de llamadas a cada función
         findViewById(R.id.btn_show_marker_cuidadbolivar).setOnClickListener(v -> showLocationWithMarker());
         findViewById(R.id.btn_show_marker_cuidadbolivar_v1).setOnClickListener(v -> showLocationWithMarkerv1());
-        findViewById(R.id.btn_show_route_cuidadbolivar).setOnClickListener(v -> showDirectionsBetweenTwoPoints(4.6323, -74.0653, 4.6097, -74.0817));
-        findViewById(R.id.btn_show_route_cuidadbolivar_v1).setOnClickListener(v -> showDirectionsBetweenTwoPointsv1(4.6323, -74.0653, 4.6097, -74.0817));
+        findViewById(R.id.btn_show_route_cuidadbolivar).setOnClickListener(v -> showDirectionsBetweenTwoPoints(4.6323, -74.0653, 4.5521, -74.1518));
+        findViewById(R.id.btn_show_route_cuidadbolivar_v1).setOnClickListener(v -> showDirectionsBetweenTwoPointsv1(4.5538 ,-74.1424, 4.5641, -74.1387));
         findViewById(R.id.btn_show_current_location_cuidadbolivar).setOnClickListener(v -> showCurrentLocation());
         findViewById(R.id.btn_show_current_location_cuidadbolivar_v1).setOnClickListener(v -> showCurrentLocationv1());
 
@@ -39,7 +39,7 @@ public class MapaCuidadBolivarActivity extends AppCompatActivity {
 
     // 1. Función para mostrar ubicación específica con un marcador y comentario
     public void showLocationWithMarker() {
-        Uri gmmIntentUri = Uri.parse("geo:4.6323,-74.0653?q=4.6323,-74.0653(Mi+Ubicacion)");
+        Uri gmmIntentUri = Uri.parse("geo:4.6323,-74.0653?q=4.6323,-74.0653(Mi+Vivienda)");
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         mapIntent.setPackage("com.google.android.apps.maps");
         startActivity(mapIntent);
@@ -47,7 +47,7 @@ public class MapaCuidadBolivarActivity extends AppCompatActivity {
 
     // 1.1 Función para mostrar ubicación específica con un marcador y comentario
     public void showLocationWithMarkerv1() {
-        Uri gmmIntentUri = Uri.parse("geo:4.6323,-74.0653?q=4.6323,-74.0653(Mi+Ubicacion)");
+        Uri gmmIntentUri = Uri.parse("geo:4.5538,4.5538?q=4.5538,4.5538(CAI Lucero)");
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         mapIntent.setPackage("com.google.android.apps.maps");
         startActivity(mapIntent);
@@ -78,7 +78,7 @@ public class MapaCuidadBolivarActivity extends AppCompatActivity {
     }
     // 3.1 Función para mostrar la ubicación actual
     public void showCurrentLocationv1() {
-        Uri gmmIntentUri = Uri.parse("geo:4.5513,-74.1446?q=mi+ubicacion");
+        Uri gmmIntentUri = Uri.parse("geo:4.5538,-74.1408?q=CAI Lucero");
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         mapIntent.setPackage("com.google.android.apps.maps");
         startActivity(mapIntent);

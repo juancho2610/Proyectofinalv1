@@ -28,7 +28,7 @@ public class MapaChapineroActivity extends AppCompatActivity {
         findViewById(R.id.btn_show_marker_chapinero).setOnClickListener(v -> showLocationWithMarker());
         findViewById(R.id.btn_show_marker_chapinero_v1).setOnClickListener(v -> showLocationWithMarkerv1());
         findViewById(R.id.btn_show_route_chapinero).setOnClickListener(v -> showDirectionsBetweenTwoPoints(4.6323, -74.0653, 4.6097, -74.0817));
-        findViewById(R.id.btn_show_route_chapinero_v1).setOnClickListener(v -> showDirectionsBetweenTwoPointsv1(4.6323, -74.0653, 4.6097, -74.0817));
+        findViewById(R.id.btn_show_route_chapinero_v1).setOnClickListener(v -> showDirectionsBetweenTwoPointsv1(4.6326, -74.06555, 4.6730, -74.0540));
         findViewById(R.id.btn_show_current_location_chapinero).setOnClickListener(v -> showCurrentLocation());
         findViewById(R.id.btn_show_current_location_chapinero_v1).setOnClickListener(v -> showCurrentLocationv1());
 
@@ -38,7 +38,7 @@ public class MapaChapineroActivity extends AppCompatActivity {
 
     // 1. Función para mostrar ubicación específica con un marcador y comentario
     public void showLocationWithMarker() {
-        Uri gmmIntentUri = Uri.parse("geo:4.6323,-74.0653?q=4.6323,-74.0653(Mi+Ubicacion)");
+        Uri gmmIntentUri = Uri.parse("geo:4.6323,-74.0653?q=4.6323,-74.0653(Universidad Piloto de Colombia)");
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         mapIntent.setPackage("com.google.android.apps.maps");
         startActivity(mapIntent);
@@ -46,7 +46,7 @@ public class MapaChapineroActivity extends AppCompatActivity {
 
     // 1.1 Función para mostrar ubicación específica con un marcador y comentario
     public void showLocationWithMarkerv1() {
-        Uri gmmIntentUri = Uri.parse("geo:4.6323,-74.0653?q=4.6323,-74.0653(Mi+Ubicacion)");
+        Uri gmmIntentUri = Uri.parse("geo:4.6730,-74.0540?q=4.6730,-74.0540(EL Parque CAI Virrey)");
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         mapIntent.setPackage("com.google.android.apps.maps");
         startActivity(mapIntent);
@@ -70,14 +70,14 @@ public class MapaChapineroActivity extends AppCompatActivity {
 
     // 3. Función para mostrar la ubicación actual
     public void showCurrentLocation() {
-        Uri gmmIntentUri = Uri.parse("geo:4.5513,-74.1446?q=mi+ubicacion");
+        Uri gmmIntentUri = Uri.parse("geo:4.6730,-74.0540?q=ubicacion Actual");
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         mapIntent.setPackage("com.google.android.apps.maps");
         startActivity(mapIntent);
     }
     // 3.1 Función para mostrar la ubicación actual
     public void showCurrentLocationv1() {
-        Uri gmmIntentUri = Uri.parse("geo:4.5513,-74.1446?q=mi+ubicacion");
+        Uri gmmIntentUri = Uri.parse("geo:4.6730,-74.0540?q=mi+ubicacion Actual");
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         mapIntent.setPackage("com.google.android.apps.maps");
         startActivity(mapIntent);

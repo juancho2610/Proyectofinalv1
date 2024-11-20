@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/beige"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -10,7 +11,7 @@
         android:id="@+id/toolbarCrearActividades_CA"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:background="@color/azulneon"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         android:elevation="4dp"/>
 
@@ -18,6 +19,7 @@
         android:id="@+id/buttonCrearFutbol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/cyan"
         android:text="Futbol"
         android:layout_marginBottom="16dp"/>
 
@@ -26,6 +28,7 @@
         android:id="@+id/buttonCrearVoleibol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/cyan"
         android:text="Voleibol"
         android:layout_marginBottom="16dp"/>
 
@@ -34,6 +37,7 @@
         android:id="@+id/buttonCrearNatacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/cyan"
         android:text="Natacion"
         android:layout_marginBottom="16dp"/>
 
@@ -42,6 +46,7 @@
         android:id="@+id/buttonCrearBaloncesto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/cyan"
         android:text="Baloncesto"
         android:layout_marginBottom="16dp"/>
 
