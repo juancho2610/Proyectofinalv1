@@ -27,8 +27,8 @@ public class MapaSubaActivity extends AppCompatActivity {
         // Ejemplo de llamadas a cada función
         findViewById(R.id.btn_show_marker_suba).setOnClickListener(v -> showLocationWithMarker());
         findViewById(R.id.btn_show_marker_suba_v1).setOnClickListener(v -> showLocationWithMarkerv1());
-        findViewById(R.id.btn_show_route_suba).setOnClickListener(v -> showDirectionsBetweenTwoPoints(4.6323, -74.0653, 4.6097, -74.0817));
-        findViewById(R.id.btn_show_route_suba_v1).setOnClickListener(v -> showDirectionsBetweenTwoPointsv1(4.6323, -74.0653, 4.6097, -74.0817));
+        findViewById(R.id.btn_show_route_suba).setOnClickListener(v -> showDirectionsBetweenTwoPoints(4.7454, -74.0959, 4.7418, -74.0824));
+        findViewById(R.id.btn_show_route_suba_v1).setOnClickListener(v -> showDirectionsBetweenTwoPointsv1(4.7418, -74.0824, 4.7506, -74.0968));
         findViewById(R.id.btn_show_current_location_suba).setOnClickListener(v -> showCurrentLocation());
         findViewById(R.id.btn_show_current_location_suba_v1).setOnClickListener(v -> showCurrentLocationv1());
 
@@ -38,7 +38,7 @@ public class MapaSubaActivity extends AppCompatActivity {
 
     // 1. Función para mostrar ubicación específica con un marcador y comentario
     public void showLocationWithMarker() {
-        Uri gmmIntentUri = Uri.parse("geo:4.6323,-74.0653?q=4.6323,-74.0653(Mi+Ubicacion)");
+        Uri gmmIntentUri = Uri.parse("geo:4.7454, -74.0959?q=4.7454, -74.0959(Portal Suba)");
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         mapIntent.setPackage("com.google.android.apps.maps");
         startActivity(mapIntent);
@@ -46,7 +46,7 @@ public class MapaSubaActivity extends AppCompatActivity {
 
     // 1.1 Función para mostrar ubicación específica con un marcador y comentario
     public void showLocationWithMarkerv1() {
-        Uri gmmIntentUri = Uri.parse("geo:4.6323,-74.0653?q=4.6323,-74.0653(Mi+Ubicacion)");
+        Uri gmmIntentUri = Uri.parse("geo:4.7418, -74.0824?q=4.7418, -74.0824(Parque el Mirador)");
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         mapIntent.setPackage("com.google.android.apps.maps");
         startActivity(mapIntent);
@@ -70,14 +70,14 @@ public class MapaSubaActivity extends AppCompatActivity {
 
     // 3. Función para mostrar la ubicación actual
     public void showCurrentLocation() {
-        Uri gmmIntentUri = Uri.parse("geo:4.5513,-74.1446?q=mi+ubicacion");
+        Uri gmmIntentUri = Uri.parse("geo:4.7454, -74.0959?q=mi+ubicacion actual");
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         mapIntent.setPackage("com.google.android.apps.maps");
         startActivity(mapIntent);
     }
     // 3.1 Función para mostrar la ubicación actual
     public void showCurrentLocationv1() {
-        Uri gmmIntentUri = Uri.parse("geo:4.5513,-74.1446?q=mi+ubicacion");
+        Uri gmmIntentUri = Uri.parse("geo:4.7418, -74.0824?q=mi+ubicacion actual");
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         mapIntent.setPackage("com.google.android.apps.maps");
         startActivity(mapIntent);
